@@ -28,7 +28,7 @@ Please see annotation below for more details.
       -  `parameters`:
         We initiate the model with mean = 0, variance = 1, and indicator = 1;  
         where b = $b^{ij}_k$, beta = $\beta^{ij}_k$, tau = $\tau^{ij}_k$, tilde_tau = $\tilde{\tau}^{ij}_k$, gammaIJK = $\gamma^{ij}_k$, the local-level indicator, and gammaIJ = $\delta^{ij}$ the node-level group indicator  
-      - `Rcpp` input format:
+      - `Rcpp` input format:  
         `Rcpp` works with 2D matrix, hence we convert the $p\times p \times q$ array into $p\times (p-1)q$ matrix, and define the mapping
       - `dir check`
         The sample size will be, in general, `maxiter-p-(p-1)-q`, to prevent from out-of-memory, we store each sample in hard-drive.  
