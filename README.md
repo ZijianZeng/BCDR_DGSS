@@ -12,7 +12,7 @@ Please see annotation below for more details.
 - `main.R`  
   The main function, when running, it  
   - load package, `Rcpp`, `RcppArmadillo` and `RcppDist`.  
-  - Read data, please prepare data in the following shape:
+  - Read data, please prepare data in the following shape:  
     `X`: a $n\times q$ matrix for covaraites, where $n$ is the sample size and $q$ is the covariate size;  
     `Y`: a $n\times p$ matrix for nodes, where $n$ is the sample size and $p$ is the node size;   
   - runs  `init.R` to load prior settings;
