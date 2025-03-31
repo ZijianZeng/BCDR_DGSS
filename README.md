@@ -20,10 +20,10 @@ Please see annotation below for more details.
       - Data read block extract data, learning the dimension and create the precision arrays.
       - `maxiter` is the length of total MCMC iterations.
       - `prior setting`:
-        `a_sigma, b_sigma`, i.e., $a_\sigma, b_\sigma$ is the likelihood variance, we use $0.1$ for non-informative prior invGamma$(0.1,0.1)$.
-        `a.nodepi, b_nodepi`, i.e., $a^i, b^i$ is the node-level sparsity, we use $1$ for non-informative prior Beta$(1,1)$.
-        `a.xpi, b_xpi`, i.e., $a_k, b_k$ is the local-level sparsity, we use $1$ for non-informative prior Beta$(1,1)$.
-        `d`, i.e., $d_k$, is the covariate-level threshold, we adhere the conventional probability threshold $5\%$, i.e., p-value threshold.
+        `a_sigma, b_sigma`, i.e., $a_\sigma, b_\sigma$ is the likelihood variance, we use $0.1$ for non-informative prior invGamma$$(0.1,0.1)$$.
+        `a.nodepi, b_nodepi`, i.e., $a^i, b^i$ is the node-level sparsity, we use $1$ for non-informative prior Beta$$(1,1)$$.
+        `a.xpi, b_xpi`, i.e., $a_k, b_k$ is the local-level sparsity, we use $1$ for non-informative prior Beta$$(1,1)$$.
+        `d`, i.e., $d_k$, is the covariate-level threshold, we adhere the conventional probability threshold $5%$, i.e., p-value threshold.
         Without prior information, we have the same non-informative values across all $i$ and $k$.
       -  `parameters`:
         We initiate the model with mean = 0, variance = 1, and indicator = 1;
