@@ -13,26 +13,26 @@ Please see annotation below for more details.
   The main function, when running, it  
   - load package, `Rcpp`, `RcppArmadillo` and `RcppDist`.  
   - Read data, please prepare data in the following shape:
-    `X`: a $n\times q$ matrix for covaraites, where $n$ is the sample size and $q$ is the covariate size;
-    `Y`: a $n\times p$ matrix for nodes, where $n$ is the sample size and $p$ is the node size; 
+    `X`: a $n\times q$ matrix for covaraites, where $n$ is the sample size and $q$ is the covariate size;  
+    `Y`: a $n\times p$ matrix for nodes, where $n$ is the sample size and $p$ is the node size;   
   - runs  `init.R` to load prior settings;
     - in `init.R` 
-      - Data read block extract data, learning the dimension and create the precision arrays.
-      - `maxiter` is the length of total MCMC iterations.
+      - Data read block extract data, learning the dimension and create the precision arrays.  
+      - `maxiter` is the length of total MCMC iterations.  
       - `prior setting`:
-        `a_sigma, b_sigma`, i.e., $a_\sigma, b_\sigma$ is the likelihood variance, we use $0.1$ for non-informative prior invGamma(0.1,0.1).
-        `a.nodepi, b_nodepi`, i.e., $a^i, b^i$ is the node-level sparsity, we use $1$ for non-informative prior Beta(1,1).
-        `a.xpi, b_xpi`, i.e., $a_k, b_k$ is the local-level sparsity, we use $1$ for non-informative prior Beta(1,1).
-        `d`, i.e., $d_k$, is the covariate-level threshold, we adhere the conventional probability threshold 5%, i.e., p-value threshold.
-        Without prior information, we have the same non-informative values across all $i$ and $k$.
+        `a_sigma, b_sigma`, i.e., $a_\sigma, b_\sigma$ is the likelihood variance, we use $0.1$ for non-informative prior invGamma(0.1,0.1).  
+        `a.nodepi, b_nodepi`, i.e., $a^i, b^i$ is the node-level sparsity, we use $1$ for non-informative prior Beta(1,1).  
+        `a.xpi, b_xpi`, i.e., $a_k, b_k$ is the local-level sparsity, we use $1$ for non-informative prior Beta(1,1).  
+        `d`, i.e., $d_k$, is the covariate-level threshold, we adhere the conventional probability threshold 5%, i.e., p-value threshold.  
+        Without prior information, we have the same non-informative values across all $i$ and $k$.  
       -  `parameters`:
-        We initiate the model with mean = 0, variance = 1, and indicator = 1;
-        where b = $b^{ij}_k$, beta = $\beta^{ij}_k$, tau = $\tau^{ij}_k$, tilde_tau = $\tilde{\tau}^{ij}_k$, gammaIJK = $\gamma^{ij}_k$, the local-level indicator, and gammaIJ = $\delta^{ij}$ the node-level group indicator
+        We initiate the model with mean = 0, variance = 1, and indicator = 1;  
+        where b = $b^{ij}_k$, beta = $\beta^{ij}_k$, tau = $\tau^{ij}_k$, tilde_tau = $\tilde{\tau}^{ij}_k$, gammaIJK = $\gamma^{ij}_k$, the local-level indicator, and gammaIJ = $\delta^{ij}$ the node-level group indicator  
       - `Rcpp` input format:
         `Rcpp` works with 2D matrix, hence we convert the $p\times p \times q$ array into $p\times (p-1)q$ matrix, and define the mapping
       - `dir check`
-        The sample size will be, in general, `maxiter-p-(p-1)-q`, to prevent from out-of-memory, we store each sample in hard-drive.
-        **Note:** This corresponds to the `store results` block in `sampler.cpp`; we only record $\beta^{ij}_k$ as the main interest, $\delta^{ij}_k = I(\beta^{ij}_k \ne 0)$.
+        The sample size will be, in general, `maxiter-p-(p-1)-q`, to prevent from out-of-memory, we store each sample in hard-drive.  
+        **Note:** This corresponds to the `store results` block in `sampler.cpp`; we only record $\beta^{ij}_k$ as the main interest, $\delta^{ij}_k = I(\beta^{ij}_k \ne 0)$.  
         Other parameters could be generated and stored following the format Line 239, 240 in `sampler.cpp`.
   - loads `sampler.cpp`
     - in `sampler.cpp`, the detailed sampling step can be found in appendix. 
