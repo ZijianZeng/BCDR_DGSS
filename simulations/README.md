@@ -1,5 +1,5 @@
 ## Simulations
-
+The zip file contains:  
 - Simulations contains $n = 200$ and $n = 500$ for the left and right columns of table 1.
 
 - In each cases, summarized results were provided to reproduce the table.
