@@ -14,12 +14,10 @@
   - `BPoS/MCMC_Shared`: we use multiple main function to parallelly run code on different datasets; 
     Similar strategy was used for `BSGSSS`, to prevent from looping over simulated datasets
 
-  - `glmnet` and `BSGSSS`: to run these two methods, we reformat the regression
-    $$y^i = \sum^p_ {j\ne i}\sum_ {k=1}^q\beta^{ij}_ k x^k y^j +\varepsilon^t$$
-    by 
-    $$
-    y^i = \sum^p_{j\ne i}\sum_{k=1}^q\beta^{ij}_k u^{jk} +\varepsilon^t
-    $$
+  - `glmnet` and `BSGSSS`: to run these two methods, we reformat the regression  
+    $$y^i = \sum^p_ {j\ne i}\sum_ {k=1}^q\beta^{ij}_ k x^k y^j +\varepsilon^t$$  
+    by   
+    $$y^i = \sum^p_ {j\ne i}\sum_ {k=1}^q\beta^{ij}_ k u^{jk} +\varepsilon^t$$  
     with considering $j$ as the group label, and $k$ as the element label with each group.
     Both methods were run by default setting, expect we increase the max iterations for `BSGSSS` from 10,000 to 20,000.
 
