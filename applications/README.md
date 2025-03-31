@@ -1,5 +1,5 @@
 ## Applications
-
+The application.rar contains: 
 - Application contains `data` folder to reconstruct the data and `OTUs` the application results.
 
 - In `data`, there are raw data and processing function. The output data will match those under `OTUs/data` folder.
