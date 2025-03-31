@@ -1,5 +1,5 @@
 ## Simulations
-The zip file contains:  
+
 - Simulations contains $n = 200$ and $n = 500$ for the left and right columns of table 1.
 
 - In each cases, summarized results were provided to reproduce the table.
@@ -15,11 +15,13 @@ The zip file contains:
     Similar strategy was used for `BSGSSS`, to prevent from looping over simulated datasets
 
   - `glmnet` and `BSGSSS`: to run these two methods, we reformat the regression
-    `y^i = \sum^p_{j \ne i} \sum_{k=1}^q \beta^{ij}_k x^k y^j + \varepsilon^t`
+    $$
+    y^i = \sum^p_ {j\ne i}\sum_ {k=1}^q\beta^{ij}_ k x^k y^j +\varepsilon^t
+    $$
     by 
-    \[
+    $$
     y^i = \sum^p_{j\ne i}\sum_{k=1}^q\beta^{ij}_k u^{jk} +\varepsilon^t
-    \]
+    $$
     with considering $j$ as the group label, and $k$ as the element label with each group.
     Both methods were run by default setting, expect we increase the max iterations for `BSGSSS` from 10,000 to 20,000.
 
