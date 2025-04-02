@@ -1,6 +1,6 @@
 ## Bayesian Covariate-Dependent Graph Learning with a Dual Group Spike-and-Slab Prior
 ### Reference  
-Zeng, Z., Li, M. and Vannucci, M. (2025). Bayesian Covariate-Dependent Graph Learning with a Dual Group Spike-and-Slab Prior. Biometrics, accepted. [arXiv: 2409.17404](https://arxiv.org/abs/2409.17404)
+Zeng, Z., Li, M. and Vannucci, M. (2025). _Bayesian Covariate-Dependent Graph Learning with a Dual Group Spike-and-Slab Prior_. **Biometrics**, accepted. [arXiv: 2409.17404](https://arxiv.org/abs/2409.17404)
 
 
 ### Use
